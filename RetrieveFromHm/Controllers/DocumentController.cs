@@ -13,7 +13,7 @@ namespace RetrieveFromHm.Controllers
 		/// The Client ID is set in the Web.config file
 		/// </summary>
 		/// <param name="id">HSDocumentID for give document</param>
-		/// <returns>The File in question, return 400 if not found or some error occured</returns>
+		/// <returns>The File in question, return 404 if not found or some known error occured</returns>
 		// GET: Document
 		public ActionResult Download(int id = 0)
 		{
@@ -30,7 +30,7 @@ namespace RetrieveFromHm.Controllers
 			// Exporting the document out of Handyman
 			try
 			{
-				filePath = handyman.GetOrderDocument(id, 1);
+				filePath = handyman.GetOrderDocument(id, 1); // 0 for xml file, 1 for moving the file to the path returned as a string
 			}
 			catch
 			{
