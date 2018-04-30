@@ -30,8 +30,8 @@ namespace RetrieveFromHm.Controllers
 			// Exporting the document out of Handyman
 			try
 			{
-				filePath = handyman.GetOrderDocument(id,
-					1); // 0 for xml file, 1 for moving the file to the path returned as a string
+				// 0 for xml file, 1 for moving the file to the path returned as a string
+				filePath = handyman.GetOrderDocument(id, 1); 
 			}
 			catch
 			{
